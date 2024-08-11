@@ -1,3 +1,5 @@
-export function upperCase(arg: string): string {
-    return arg.toUpperCase()
+export class StringInfo {
+    upperCase(arg: string): string {
+        return arg.toUpperCase()
+    }
 }

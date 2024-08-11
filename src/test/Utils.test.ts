@@ -1,13 +1,18 @@
-import { upperCase } from "../app/Utils"
+import { StringInfo } from "../app/Utils"
 
-describe('Utils test suite', () => {
+describe('StringInfo test suite', () => {
+    let sut: StringInfo
+
+    beforeEach(() => {
+        sut = new StringInfo()
+    })
+
     it('should return uppercase of valid string', () => {
         // arrange:
-        const sut = upperCase
         const expected = 'ABC'
 
         // act:
-        const result = sut('abc')
+        const result = sut.upperCase('abc')
 
         // assert:
         expect(result).toBe(expected)
@@ -19,7 +24,7 @@ describe('Utils test suite', () => {
             { input: 'cba', expected: 'CBA' },
             { input: 'def', expected: 'DEF' },
         ])('$input toUpperCase should be $expected', ({ input, expected }) => {
-            const result = upperCase(input)
+            const result = sut.upperCase(input)
             expect(result).toBe(expected)
         })
     })
