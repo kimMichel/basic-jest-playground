@@ -18,6 +18,12 @@ describe('StringInfo test suite', () => {
         expect(result).toBe(expected)
     })
 
+    it('should throw Error for empty argument', () => {
+        expect(() => {
+            sut.upperCase('')
+        }).toThrow()
+    })
+
     describe('toUpperCase examples', () => {
         it.each([
             { input: 'abc', expected: 'ABC' },
